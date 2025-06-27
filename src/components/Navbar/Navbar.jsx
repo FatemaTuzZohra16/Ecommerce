@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { GoPerson } from "react-icons/go";
 import Container from '../Layout/Container';
+import {Link} from "react-router"
 
 const Navbar = () => {
   return (
@@ -17,16 +18,19 @@ const Navbar = () => {
         <div>
             <ul className='flex gap-x-[48px] font-primary text-base leading-6'>
                 <li className='relative group'>
-                  <a className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' href="">Home</a>
+                  <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="/">Home</Link>
                 </li>
                 <li className='relative group'>
-                  <a className='relative after:absolute after:content-[""] after:bottom-0 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px] after:left-1/2 after:-translate-x-1/2' href="">Contact</a>
+                  <Link className='relative after:absolute after:content-[""] after:bottom-0 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px] after:left-1/2 after:-translate-x-1/2' to="/Product">Product</Link>
                 </li>
                 <li className='relative group'>
-                  <a className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' href="">About</a>
+                  <Link className='relative after:absolute after:content-[""] after:bottom-0 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px] after:left-1/2 after:-translate-x-1/2' to="">Contact</Link>
                 </li>
                 <li className='relative group'>
-                  <a className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' href="">Sign Up</a>
+                  <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="">About</Link>
+                </li>
+                <li className='relative group'>
+                  <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="">Sign Up</Link>
                 </li>
             </ul>
         </div>

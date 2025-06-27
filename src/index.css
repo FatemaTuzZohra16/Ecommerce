@@ -36,7 +36,7 @@
 
 
 /* Slick arrow visible and styled */
-.slick-prev,
+/* .slick-prev,
 .slick-next {
   z-index: 50;
   font-size: 0;
@@ -45,16 +45,46 @@
   top: 50%;
   transform: translateY(-50%);
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   cursor: pointer;
-  background: hwb(0 4% 13% / 0.1);
+  background: #F5F5F5;
   border-radius: 50%;
-}
+} */
 
-.slick-prev:before,
+/* .slick-prev:before,
 .slick-next:before {
   font-size: 20px;
   color: #000;
-  opacity: 0.75;
+  opacity: 0;
+} */
+
+.slick-prev, .slick-next {
+    position: absolute;
+    font-size: 0;
+    top: -58% !important;
+    right: 0;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50%;
+    z-index: 999;
+    /* transform: translate(0, -50%); */
+    color: black;
+    background: #F5F5F5 !important;
+}
+.slick-next {
+    right: 25px !important;
+}
+.slick-prev {
+    left: 1045px !important;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 28px;
+    opacity: 0;
+    color: black !important;
+    background: #F5F5F5 !important;
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    color: transparent;
+    background: #F5F5F5;
 }

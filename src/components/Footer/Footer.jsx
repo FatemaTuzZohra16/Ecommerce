@@ -70,7 +70,7 @@ const Footer = () => {
                         <FaRegCopyright />
                     </div>
                     <div>
-                      <p className='font-primary text-base leading-[24px] text-[#3D3D3D]'>Copyright Rimel 2024. All right reserved</p>
+                      <p className='font-primary text-base leading-[24px] text-[#3D3D3D]'>Copyright Exclusive 2024. All right reserved</p>
                     </div>
                 </div>
             </Container>
