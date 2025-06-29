@@ -5,15 +5,16 @@ import product3 from '../../assets/product3.png'
 import { CiHeart } from 'react-icons/ci';
 import { IoEyeOutline } from 'react-icons/io5';
 import { FaStar } from 'react-icons/fa';
+import ProductRating from './ProductRating';
 
 
 const ProductRight = () => {
     const [productData, setProductData] = useState([])
-    useEffect (()=>{
+    useEffect(() => {
         fetch("https://dummyjson.com/products")
-            .then((res)=> res.json())
-            .then((data)=> setProductData(data.products));
-    },[])
+            .then((res) => res.json())
+            .then((data) => setProductData(data.products));
+    }, [])
 
     // const product = [
     //     {
@@ -82,43 +83,52 @@ const ProductRight = () => {
 
     // ]
     return (
-        <div className='mt-[151px] mb-[104px]'>
-                <div className='flex justify-between flex-wrap'>
-                      {
-                        productData.map((product) => (
-                            <div className='card mb-[60px]'>
-                                <div className='w-[270px] h-[300px] bg-[#F5F5F5] rounded py-[55px] px-[65px] relative group'>
-                                    <img src={product.thumbnail} alt="" />
-                                    <div className='hidden group-hover:block'>
-                                        <a className='absolute font-primary font-medium text-base leading-6 py-2 rounded bg-black text-white bottom-0 left-0 w-full text-center' href="">Add To Cart</a>
-                                    </div>
-                                    <div className='absolute top-3 right-3'>
-                                        <div className='w-[34px] h-[34px] rounded-full bg-white flex justify-center items-center mb-2'>
-                                            <CiHeart />
-                                        </div>
-                                        <div className='w-[34px] h-[34px] rounded-full bg-white flex justify-center items-center'>
-                                            <IoEyeOutline />
-                                        </div>
-                                    </div>
+        <div className='mt-[210px] mb-[104px]'>
+            <div className='flex justify-between flex-wrap relative'>
+                <div className='flex items-center gap-x-3 top-[-60px] absolute right-0 z-40 mb-[30px]'>
+                    <p className='font-primary text-base leading-6'>Show : </p>
+                    <div>
+                        <input type="text" className='w-[97px] h-[29px] rounded-[5px] border border-[#D9D9D9] outline-0 text-center' />
+                    </div>
+                </div>
+                {
+                    productData.map((product) => (
+                        <div className='card mb-[60px]'>
+                            <div className='w-[270px] h-[300px] bg-[#F5F5F5] rounded py-[55px] px-[65px] relative group'>
+                                <img src={product.thumbnail} alt="" />
+                                <div className='hidden group-hover:block'>
+                                    <a className='absolute font-primary font-medium text-base leading-6 py-2 rounded bg-black text-white bottom-0 left-0 w-full text-center' href="">Add To Cart</a>
                                 </div>
-                                <div>
-                                    <p className='w-[260px] font-primary font-medium text-[16px] pt-[16px]'>{product.title}</p>
-                                    <div className='flex'>
-                                        <p className='font-primary font-medium text-[16px] text-primary py-2'>{product.price}</p>
+                                <div className='absolute top-3 right-3'>
+                                    <div className='w-[34px] h-[34px] rounded-full bg-white flex justify-center items-center mb-2'>
+                                        <CiHeart />
                                     </div>
-                                    <div className='flex items-center text-[#FFAD33]'>
-                                            <FaStar />
-                                            <FaStar />
-                                            <FaStar />
-                                            <FaStar />
-                                            <FaStar />
-                                            <p className='ml-2 font-primary font-semibold text-[14px] text-[#7F7F7F]'>{product.reviews.length}</p>
-                                        </div>
+                                    <div className='w-[34px] h-[34px] rounded-full bg-white flex justify-center items-center'>
+                                        <IoEyeOutline />
+                                    </div>
                                 </div>
                             </div>
-                        ))
-                    }
-                </div>
+                            <div>
+                                <p className='w-[260px] font-primary font-medium text-[16px] pt-[16px]'>{product.title}</p>
+                                <div className=''>
+                                    <p className='font-primary font-medium text-[16px] text-primary py-2'>{product.price} <del className='text-[#7F7F7F] ml-3'>$320</del></p>
+                                </div>
+                                <div className='flex items-center text-[#FFAD33]'>
+                                    {/* <FaStar />
+                                    <FaStar />
+                                    <FaStar />
+                                    <FaStar />
+                                    <FaStar /> */}
+                                    <div>
+                                        <ProductRating  rating={product.rating}/>
+                                    </div>
+                                    <p className='ml-2 font-primary font-semibold text-[14px] text-[#7F7F7F]'>{product.reviews.length}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }
