@@ -3,7 +3,6 @@ import { FaStar } from 'react-icons/fa';
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 const ProductRating = ({rating}) => {
-    console.log(rating);
     const fullRating = Math.floor(rating)
     const halfRating = rating % 1>=0.5
     const emptyRating = 5 - fullRating - (halfRating ? 1: 0)

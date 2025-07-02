@@ -6,16 +6,27 @@ import { CiHeart } from 'react-icons/ci';
 import { IoEyeOutline } from 'react-icons/io5';
 import { FaStar } from 'react-icons/fa';
 import ProductRating from './ProductRating';
+import {Link} from 'react-router'
 
 
 const ProductRight = () => {
+    const [currentPage , setCurrentPage] = useState(1)
     const [productData, setProductData] = useState([])
+    const productPerPage = 6
     useEffect(() => {
         fetch("https://dummyjson.com/products")
             .then((res) => res.json())
             .then((data) => setProductData(data.products));
     }, [])
+    const totalProduct = productData.length
+    const totalPage = Math.ceil(totalProduct / productPerPage)
+    const indexOfLastProduct = currentPage * productPerPage
+    const indexOfFirstProduct = indexOfLastProduct - productPerPage
+    const currentProduct = productData.slice(indexOfFirstProduct , indexOfLastProduct)
+    console.log(indexOfFirstProduct);
+    
 
+    const data = [...Array(totalPage).keys()].map((index)=>index + 1)
     // const product = [
     //     {
     //         title: 'AK-900 Wired Keyboard',
@@ -92,8 +103,8 @@ const ProductRight = () => {
                     </div>
                 </div>
                 {
-                    productData.map((product) => (
-                        <div className='card mb-[60px]'>
+                    currentProduct.map((product) => (
+                        <Link to={`/Product/ ${product.id}`} className='card mb-[60px]'>
                             <div className='w-[270px] h-[300px] bg-[#F5F5F5] rounded py-[55px] px-[65px] relative group'>
                                 <img src={product.thumbnail} alt="" />
                                 <div className='hidden group-hover:block'>
@@ -125,9 +136,30 @@ const ProductRight = () => {
                                     <p className='ml-2 font-primary font-semibold text-[14px] text-[#7F7F7F]'>{product.reviews.length}</p>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))
                 }
+            </div>
+            <div className='flex gap-x-[10px]'>
+                <button className='font-primary font-bold px-4'
+                onClick={()=>setCurrentPage(prev => Math.max(prev-1 ,1))}
+                disabled ={currentPage === 1}
+                >
+                 Prev
+                </button>
+               {
+                data.map((item)=>(
+                    <div className={`py-2 px-3 rounded cursor-pointer ${currentPage == item ? 'bg-gray-300 text-black' : 'bg-black text-white'}`}
+                    onClick={()=> setCurrentPage(item)}
+                    >{item}</div>
+                ))
+               }
+               <button className='font-primary font-bold px-4'
+               onClick={()=>setCurrentPage(prev=> Math.min(prev+1 , data.length))}
+               disabled={currentPage === data.length}
+               >
+                Next
+               </button>
             </div>
         </div>
     )
