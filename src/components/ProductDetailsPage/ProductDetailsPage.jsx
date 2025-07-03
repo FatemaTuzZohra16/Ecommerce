@@ -8,7 +8,7 @@ const ProductDetailsPage = () => {
     <div>
         <Container>
                 <SingleProductDetail />
-                <ProductDetails />
+                 <ProductDetails />
         </Container>
     </div>
   )
