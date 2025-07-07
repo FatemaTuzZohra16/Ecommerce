@@ -11,6 +11,8 @@ import ProductPage from './components/Product/ProductPage.jsx';
 import Home from './components/Pages/Home.jsx';
 import MainRoute from './components/MainRoute/MainRoute.jsx';
 import ProductDetailsPage from './components/ProductDetailsPage/ProductDetailsPage.jsx';
+import Cart from './components/Pages/Cart.jsx';
+import CheckOut from './components/Pages/CheckOut.jsx';
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,10 @@ const router = createBrowserRouter([
     Component: MainRoute,
     children: [
       { index: true, Component: Home },
-      { path: "product", Component: ProductPage },
-      { path: "product/:id", Component: ProductDetailsPage }
+      { path: "/product", Component: ProductPage },
+      { path: "/product/:id", Component: ProductDetailsPage },
+      { path: "/cart", Component: Cart },
+      { path: "/checkOut", Component: CheckOut }
     ]
   },
   // {

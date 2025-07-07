@@ -1,6 +1,4 @@
 import React from 'react'
-// import Header from '../Header/Header'
-// import Navbar from '../Navbar/Navbar'
 import Banner from '../Banner/Banner'
 import Category from '../Category/Category'
 import BestSellingProduct from '../BestSellingProduct/BestSellingProduct'

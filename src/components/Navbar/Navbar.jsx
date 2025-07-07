@@ -42,7 +42,9 @@ const Navbar = () => {
           </div>
           <div className='flex gap-4 font-bold'>
             <CiHeart size={24}/>
+            <Link to="/cart">
             <IoCartOutline size={24}/>
+            </Link>
             <GoPerson size={24}/>
             </div>
         </div>
