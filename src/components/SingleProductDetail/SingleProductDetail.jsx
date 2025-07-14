@@ -90,6 +90,11 @@ const SingleProductDetail = () => {
                             <div className='w-5 h-5 rounded-full bg-primary hover:bg-[#A0BCE0] hover:border-2 hover:border-white hover:outline-2 hover:outline-black'></div>
                         </div>
                     </div>
+                    <div className='pb-[40px]'>
+                        <div className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white inline-block'>
+                                    <a href="">Add To Cart</a>
+                                </div>
+                    </div>
 
                     <div className='w-[399px] h-[180px] border border-black/50 rounded py-6'>
                         <div className='flex items-center gap-x-4 pl-4'>

@@ -6,7 +6,7 @@ import Offer from '../Offer/Offer'
 import OurProducts from '../OurProducts/OurProducts'
 import Arrival from '../Arrival/Arrival'
 import Service from '../Service/Service'
-// import Footer from '../Footer/Footer'
+
 function Home() {
     return (
         <>
