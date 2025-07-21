@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useParams} from 'react-router'
+import { useParams } from 'react-router'
 import gameController from '../../assets/gameController.png'
 import gameController1 from '../../assets/gameController1.png'
 import gameController2 from '../../assets/gameController2.png'
@@ -9,26 +9,34 @@ import { FaStar } from 'react-icons/fa';
 import { CiStar } from "react-icons/ci";
 import { TbTruckDelivery } from "react-icons/tb";
 import { LuRefreshCcw } from "react-icons/lu";
+import { useDispatch } from 'react-redux'
+import { cartTotal } from '../../slices/cartSlice'
 
 const SingleProductDetail = () => {
-    const {id} = useParams() 
-    const [productData, setProductData] = useState([])
-    const [showStock , setShowStock] = useState(false)
-    const [selectedImg ,setSelectedImg] = useState()
-    const [loading, setLoading] = useState(false)
-    
-    useEffect(() => {
-            fetch("https://dummyjson.com/products")
-                .then((res) => res.json())
-                .then((data) => setProductData(data.products));
-        }, [])
-        const singleProduct = productData.find((product)=>product.id == id)
+    const { id } = useParams()
+    const dispatch= useDispatch()
 
-        useEffect(()=>{
-            if(singleProduct?.thumbnail){
-                setSelectedImg(singleProduct?.thumbnail)
-            }
-},[singleProduct])
+    const [productData, setProductData] = useState([])
+    const [showStock, setShowStock] = useState(false)
+    const [selectedImg, setSelectedImg] = useState()
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        fetch("https://dummyjson.com/products")
+            .then((res) => res.json())
+            .then((data) => setProductData(data.products));
+    }, [])
+    const singleProduct = productData.find((product) => product.id == id)
+
+    useEffect(() => {
+        if (singleProduct?.thumbnail) {
+            setSelectedImg(singleProduct?.thumbnail)
+        }
+    }, [singleProduct])
+    const handleAddToCart= (product)=>{
+        dispatch(cartTotal(product))
+        
+    }
     return (
         <div>
             <div className='py-[80px]'>
@@ -38,9 +46,9 @@ const SingleProductDetail = () => {
                     <p className='text-black'>Havic HV G-92 Gamepad</p>
                 </div>
             </div>
-                <div className='flex pb-[140px]'>
-                    <div className="left w-[20%]">
-                        {/* <div className='mb-4 bg-[#F5F5F5]  rounded'>
+            <div className='flex pb-[140px]'>
+                <div className="left w-[20%]">
+                    {/* <div className='mb-4 bg-[#F5F5F5]  rounded'>
                             <img onClick={()=> setSelectedImg(gameController1)} src={gameController1} alt="" />
                         </div>
                         <div className='mb-4 bg-[#F5F5F5]  rounded'>
@@ -52,14 +60,14 @@ const SingleProductDetail = () => {
                         <div className='bg-[#F5F5F5] rounded'>
                             <img onClick={()=> setSelectedImg(gameController4)} src={gameController4} alt="" />
                         </div> */}
-                        {
-                            singleProduct?.images.map((img)=>(
-                                <div className='mb-4 bg-[#F5F5F5]  rounded'>
-                            <img onClick={()=> setSelectedImg(img)} src={img} alt="" />
-                        </div>
-                            ))
-                        }
-                    </div>
+                    {
+                        singleProduct?.images.map((img) => (
+                            <div className='mb-4 bg-[#F5F5F5]  rounded'>
+                                <img onClick={() => setSelectedImg(img)} src={img} alt="" />
+                            </div>
+                        ))
+                    }
+                </div>
                 <div className="right w-[60%] bg-[#F5F5F5]  mr-[70px] ml-[30px] overflow-hidden">
                     <img className='h-[600px] object-contain' src={selectedImg} alt="" />
                 </div>
@@ -77,9 +85,9 @@ const SingleProductDetail = () => {
                         </div>
                         <p className='font-primary text-[14px] leading-[21px] pl-2 text-[#BFBFBF]'>({singleProduct?.reviews.length} Reviews)</p>
                         <span className='px-4 text-[#BFBFBF]'>|</span>
-                        <p onClick={()=>setShowStock(true)} className='font-primary text-[14px] leading-[21px] text-green cursor-pointer'>
+                        <p onClick={() => setShowStock(true)} className='font-primary text-[14px] leading-[21px] text-green cursor-pointer'>
                             {showStock ? `Stock: ${singleProduct?.stock}` : "In Stock"}
-                         </p>
+                        </p>
                     </div>
                     <p className='font-secondery text-[24px] leading-6'>${singleProduct?.price}</p>
                     <p className='font-primary text-[14px] leading-[21px] py-6 border-b border-black/50'>{singleProduct?.description}</p>
@@ -92,8 +100,8 @@ const SingleProductDetail = () => {
                     </div>
                     <div className='pb-[40px]'>
                         <div className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white inline-block'>
-                                    <a href="">Add To Cart</a>
-                                </div>
+                            <button onClick={()=>handleAddToCart(singleProduct)} href="">Add To Cart</button>
+                        </div>
                     </div>
 
                     <div className='w-[399px] h-[180px] border border-black/50 rounded py-6'>
@@ -122,7 +130,7 @@ const SingleProductDetail = () => {
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     )
 }
