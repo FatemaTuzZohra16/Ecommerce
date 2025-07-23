@@ -11,10 +11,11 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { LuRefreshCcw } from "react-icons/lu";
 import { useDispatch } from 'react-redux'
 import { cartTotal } from '../../slices/cartSlice'
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 const SingleProductDetail = () => {
     const { id } = useParams()
-    const dispatch= useDispatch()
+    const dispatch = useDispatch()
 
     const [productData, setProductData] = useState([])
     const [showStock, setShowStock] = useState(false)
@@ -33,12 +34,26 @@ const SingleProductDetail = () => {
             setSelectedImg(singleProduct?.thumbnail)
         }
     }, [singleProduct])
-    const handleAddToCart= (product)=>{
+
+    const handleAddToCart = (product) => {
         dispatch(cartTotal(product))
-        
+        toast.success("Add To Cart")
     }
     return (
         <div>
+            <ToastContainer
+                position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition={Bounce}
+            />
             <div className='py-[80px]'>
                 <div className='flex gap-x-[6px] font-primary text-[14px] leading-[21px] text-[#BFBFBF]'>
                     <p>Account /</p>
@@ -100,7 +115,7 @@ const SingleProductDetail = () => {
                     </div>
                     <div className='pb-[40px]'>
                         <div className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white inline-block'>
-                            <button onClick={()=>handleAddToCart(singleProduct)} href="">Add To Cart</button>
+                            <button onClick={() => handleAddToCart(singleProduct)} href="">Add To Cart</button>
                         </div>
                     </div>
 

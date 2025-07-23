@@ -26,8 +26,11 @@ export const cartSlice = createSlice({
         console.log(state.cartItems);
         state.cartItems[action.payload.id].cartQun +=1
       }else{
-        state.cartItems[action.payload.id].cartQun -=1
-      }
+        if(state.cartItems[action.payload.id].cartQun > 1){
+
+          state.cartItems[action.payload.id].cartQun -=1
+        }
+        }
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
     }
   }
