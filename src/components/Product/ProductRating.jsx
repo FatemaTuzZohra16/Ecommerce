@@ -16,7 +16,7 @@ const ProductRating = ({rating}) => {
         }
         {
               halfRating &&
-                <FaRegStarHalfStroke />
+                <FaRegStarHalfStroke  className='text-[#FFAD33]'/>
         }
         {
                 [...Array(emptyRating)].map(()=>(

@@ -1,45 +1,61 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../Layout/Container'
+import { Link } from 'react-router';
 
 const ProductLeft = () => {
-   const categoriesData = [
-        {
-            name:"Woman’s Fashion"
-        },
-        {
-            name:"Men’s Fashion"
-        },
-        {
-            name:"Electronics"
-        },
-        {
-            name:"Home & Lifestyle"
-        },
-        {
-            name:"Medicine"
-        },
-        {
-            name:"Sports & Outdoor"
-        },
-        {
-            name:"Baby’s & Toys"
-        },
-        {
-            name:"Groceries & Pets"
-        },
-        {
-            name:"Health & Beauty"
-        }
-    ]
+    const [productData, setProductData] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+     useEffect(() => {
+            fetch("https://dummyjson.com/products")
+                .then((res) => res.json())
+                .then((data) => {
+                    const categories = [...new Set(data.products.map(p => p.category))];
+                      setProductData(categories);
+                });
+                console.log(productData);
+                
+        }, [])
+//    const categoriesData = [
+//         {
+//             name:"Woman’s Fashion"
+//         },
+//         {
+//             name:"Men’s Fashion"
+//         },
+//         {
+//             name:"Electronics"
+//         },
+//         {
+//             name:"Home & Lifestyle"
+//         },
+//         {
+//             name:"Medicine"
+//         },
+//         {
+//             name:"Sports & Outdoor"
+//         },
+//         {
+//             name:"Baby’s & Toys"
+//         },
+//         {
+//             name:"Groceries & Pets"
+//         },
+//         {
+//             name:"Health & Beauty"
+//         }
+//     ]
   return (
     <div>
         <div>
             <p className='pt-[80px] font-primary text-[14px] leading-[21px] text-[#888888]'>home  /  shop</p>
           <h3 className='font-primary font-bold text-[20px] text-[#262626] pt-[50px] pb-[15px]'>Shop by Category</h3>
-        {categoriesData.map((category)=>(
-            <p className='font-primary text-[16px] leading-6 mb-[16px]'>
-                {category.name}
+        {productData.map((category)=>(
+           <Link to={`/category/${category}`}>
+            <p onClick={() => setSelectedCategory(category)} className='font-primary text-[16px] leading-6 mb-[16px]'>
+                {category}
             </p>
+           </Link>
         )
     )}
       <h3 className='font-primary font-bold text-[20px] text-[#262626] pt-[40px] pb-[15px]'>Shop by Color</h3>

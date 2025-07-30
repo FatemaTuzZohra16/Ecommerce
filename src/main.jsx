@@ -17,6 +17,9 @@ import store from './store.js';
 import { Provider } from 'react-redux'
 import SignUp from './components/Pages/SignUp.jsx';
 import LogIn from './components/Pages/LogIn.jsx';
+import firebaseConfig from './firebase/firebaseConfig.js';
+import Category from './components/Pages/Category.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,7 @@ const router = createBrowserRouter([
       { path: "/checkOut", Component: CheckOut },
       { path: "/signup", Component: SignUp },
       { path: "/logIn", Component: LogIn },
+      { path: "/category/:name", Component: Category },
     ]
   },
   // {
