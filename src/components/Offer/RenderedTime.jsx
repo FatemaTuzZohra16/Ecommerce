@@ -2,7 +2,7 @@ import React from 'react'
 
 const RenderedTime = ({ hours, days, minutes, seconds }) => {
   return (
-    <div className='flex gap-x-6'>
+    <div className='flex gap-x-2 md:gap-x-6'>
         <div className='w-[62px] h-[62px] rounded-full bg-white flex flex-col justify-center items-center py-[14px] px-[15px]'>
             <p className='font-primary font-semibold text-base leading-5'>{hours}</p>
             <p className='font-primary text-[11px] leading-[18px]'>hours</p>

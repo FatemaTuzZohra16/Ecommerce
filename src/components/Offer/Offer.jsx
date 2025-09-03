@@ -7,10 +7,10 @@ const Offer = () => {
   return (
     <div className='pb-[161px]'>
         <Container>
-            <div className='bg-[url(./assets/offer.png)] py-[59px] bg-center bg-cover bg-no-repeat'>
+            <div className='bg-[url(./assets/offer.png)] py-[59px] bg-center bg-cover bg-no-repeat rounded-2xl md:rounded-none'>
                 <div className='ml-[56px]'>
                     <p className='font-primary font-semibold text-base text-green'>Categories</p>
-                    <h3 className='w-[440px] font-secondery font-semibold text-[48px] leading-[60px] text-white tracking-[4%] my-[32px]'>Enhance Your Music Experience</h3>
+                    <h3 className='w-auto md:w-[440px] font-secondery font-semibold text-[35px] md:text-[48px] leading-[50px] md:leading-[60px] text-white tracking-[4%] my-[32px]'>Enhance Your Music Experience</h3>
                     <div>
                           <Countdown date={Date.now() +  518400000} 
                           renderer={RenderedTime}

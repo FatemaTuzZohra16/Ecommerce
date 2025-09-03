@@ -14,7 +14,7 @@ const Footer = () => {
     return (
         <div className='bg-black text-[#FAFAFA]'>
             <Container>
-                <div className='flex pt-[80px] pb-[124px] justify-between'>
+                <div className='flex flex-wrap pt-[80px] pb-[124px] justify-between'>
                     <div className="exclusive w-[217px]">
                         <h5 className='font-secondery font-bold text-[24px] leading--[24px] mb-[24px] text-white'>Exclusive</h5>
                         <h3 className='font-primary font-medium text-[20px] leading-[28px] mb-[24px] '>Subscribe</h3>
@@ -24,13 +24,13 @@ const Footer = () => {
                             <div className='absolute top-4 right-3'><VscSend /></div>
                         </div>
                     </div>
-                    <div className="support w-[175px]">
+                    <div className="support w-[175px] py-12 md:py-0">
                         <h3 className='font-primary font-medium text-[20px] leading-[28px] mb-[24px]'>Support</h3>
                         <p className='font-primary text-base leading-[24px]'>111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</p>
                         <p className='font-primary text-base leading-[24px] py-[16px]'>exclusive@gmail.com</p>
                         <p className='font-primary text-base leading-[24px]'>+88015-88888-9999</p>
                     </div>
-                    <div className="account w-[123px]">
+                    <div className="account w-[123px] py-12 md:py-0">
                         <h3 className='font-primary font-medium text-[20px] leading-[28px] mb-[24px]'>Account</h3>
                         <p className='font-primary text-base leading-[24px]'>My Account</p>
                         <p className='font-primary text-base leading-[24px] py-[16px]'>Login / Register</p>

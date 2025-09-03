@@ -43,16 +43,16 @@ const SingleProductDetail = () => {
         <div>
             <ToastContainer
                 position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick={false}
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
-transition={Bounce}
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Bounce}
             />
             <div className='py-[80px]'>
                 <div className='flex gap-x-[6px] font-primary text-[14px] leading-[21px] text-[#BFBFBF]'>

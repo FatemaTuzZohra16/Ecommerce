@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { current } from '@reduxjs/toolkit';
 import { cartQuntity } from '../../slices/cartSlice';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-import { ImCross } from "react-icons/im";
+import { MdDelete } from "react-icons/md";
 
 const Cart = () => {
     const data = useSelector(state => state.cartDetails.cartItems)
@@ -68,7 +68,7 @@ console.log(discount);
                                 theme="dark"
                                 transition={Bounce}
                             />
-                <div className='pb-[140px]'>
+                <div className='pb-[80px] md:pb-[140px]'>
                     <div className='flex py-[80px] font-primary'>
                         <p className='text-[14px] leading-[21px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]'>Home</p>
                         <p className='px-3'>/</p>
@@ -133,24 +133,24 @@ console.log(discount);
                                 <div className='w-[25%]'>
                                     <p className='text-base leading-6'>${(product.price * product.cartQun).toFixed(2)}</p>
                                 </div>
-                                <div className='w-[50px] h-[50px] rounded-full flex justify-center items-center bg-primary text-white'>
-                                    <ImCross  onClick={handleDelete}/>
+                                <div className='w-[40px] h-[40px] rounded-full flex justify-center items-center bg-primary text-white'>
+                                    <MdDelete  size={24} onClick={handleDelete}/>
                                 </div>
                             </div>
                         ))
                     }
 
                     <div className='flex justify-between pt-6 pb-[80px]'>
-                        <div className='font-primary font-medium text-base leading-6 border border-black/30 rounded py-[16px] px-[48px]'>
+                        <div className='font-primary font-medium text-base leading-6 border border-black/30 rounded py-[16px] px-[25px] md:px-[48px]'>
                             <Link to="/product">Return To Shop</Link>
                         </div>
-                        <div className='font-primary font-medium text-base leading-6 border border-black/30 rounded py-[16px] px-[48px]'>
+                        <div className='font-primary font-medium text-base leading-6 border border-black/30 rounded py-[16px] px-[25px] md:px-[48px]'>
                             <a href="">Update Cart</a>
                         </div>
                     </div>
-                    <div className='flex justify-between'>
+                    <div className='md:flex justify-between'>
                         <div>
-                            <div className='flex gap-x-4'>
+                            <div className='md:flex gap-x-4'>
                                 <div className='font-primary font-medium text-base leading-6 border border-black/30 rounded py-[16px] pl-[24px]'>
                                     <input
                                         onChange={handleChange}
@@ -160,10 +160,10 @@ console.log(discount);
                                         className='outline-0'
                                     />
                                 </div>
-                                <button onClick={handleApplyCoupon} className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white'>Apply Coupon</button>
+                                <button onClick={handleApplyCoupon} className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white mt-[20px] md:mt-0'>Apply Coupon</button>
                             </div>
                         </div>
-                        <div className='w-[470px] border py-[32px] px-[24px] font-primary'>
+                        <div className='w-auto md:w-[470px] border py-[32px] px-[24px] font-primary mt-[30px] md:mt-0'>
                             <p className='font-primary font-medium text-[20px] leading-7'>Cart Total</p>
                             <div className='flex justify-between border-b border-black/30 pt-6 pb-4'>
                                 <p className='text-base leading-6'>Subtotal:</p>

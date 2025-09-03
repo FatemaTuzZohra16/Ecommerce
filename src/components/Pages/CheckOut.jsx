@@ -72,7 +72,7 @@ const CheckOut = () => {
                     <p className='font-primary text-base leading-[21px]'>CheckOut</p>
                 </div>
                 <h2 className='font-secondery font-medium text-[30px] leading-[36px] pt-[80px] pb-[48px]'>Billing Details</h2>
-                <div className='flex justify-between'>
+                <div className='md:flex justify-between'>
                     <div>
                         {
                             inputFields.map((field) => (

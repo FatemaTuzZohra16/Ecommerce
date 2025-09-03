@@ -112,7 +112,7 @@ const Category = () => {
         arrows: true,
     };
     return (
-        <div className='pt-[153px] pb-[95px]'>
+        <div className='pt-[60px] md:pt-[153px] pb-[95px]'>
             <Container>
                     <div className='flex items-center '>
                     <div className='w-5 h-10 rounded bg-primary'></div>
@@ -122,9 +122,9 @@ const Category = () => {
                 </div>
                 <div>
                     <div>
-                        <h3 className='font-secondery font-semibold text-[36px] leading-[48px] mt-5'>Browse By Category</h3>
+                        <h3 className='font-secondery font-semibold text-[36px] leading-[38px] md:leading-[48px] mt-5'>Browse By Category</h3>
                     </div>
-                    <div className='mt-[60px] relative'>
+                    <div className='mt-[40px] md:mt-[60px] relative'>
                         <Slider {...settings}>
                         {
                             categories.map((item)=>(

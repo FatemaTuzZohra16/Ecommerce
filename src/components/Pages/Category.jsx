@@ -17,11 +17,11 @@ const Category = () => {
     <div className='py-10'>
       <Container>
         <div>
-          <div className='flex justify-between items-center'>
+          <div className='md:flex justify-between items-center mb-[60px] md:mb-0'>
             <h2 className='text-2xl font-bold mb-[60px] capitalize'>{name} Products</h2>
             <Link to={"/product"} className='font-primary font-medium text-base leading-[24px] rounded bg-primary text-white py-3 px-8'>Go Back</Link>
           </div>
-          <div className='flex flex-wrap gap-7'>
+          <div className='flex flex-wrap gap-7 pl-10 md:pl-0'>
             {products.map(product => (
               <div>
                 <div key={product.id} className='w-[270px] h-[290px] bg-[#F5F5F5] flex items-center rounded relative group'>

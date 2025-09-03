@@ -113,9 +113,9 @@ const ProductRight = () => {
 
     // ]
     return (
-        <div className='mt-[210px] mb-[104px]'>
+        <div className='mt-[100px] md:mt-[210px] mb-[104px]'>
             <div className='flex justify-between flex-wrap relative'>
-                <div className='flex items-center gap-x-3 top-[-60px] absolute right-0 z-40 mb-[30px]'>
+                <div className='flex items-center gap-x-3 top-[-60px] absolute right-0 z-40 mb-[30px] pr-[85px]'>
                     <p className='font-primary text-base leading-6'>Show : </p>
                     <div>
                         <input onChange={handleSearch} type="text" placeholder='Search' className='w-[197px] h-[29px] rounded-[5px] border border-[#D9D9D9] outline-0 pl-5 cursor-pointer' />
@@ -199,53 +199,50 @@ const ProductRight = () => {
                 }
             </div>
             <div className='flex gap-x-[10px]'>
-    {
-        (filterProductData.length > 3 || (filterProductData.length === 0 && data.length > 3)) && (
-            <button className='font-primary font-bold px-4'
-                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                disabled={currentPage === 1}
-            >
-                Prev
-            </button>
-        )
-    }
-
-    {
-        filterProductData.length > 3 
-            ? searchData.map((item) => (
-                <div
-                    key={item}
-                    className={`py-2 px-3 rounded cursor-pointer ${currentPage === item ? 'bg-gray-300 text-black' : 'bg-black text-white'}`}
-                    onClick={() => setCurrentPage(item)}
-                >
-                    {item}
-                </div>
-            ))
-            : filterProductData.length > 0
-                ? null
-                : data.map((item) => (
-                    <div
-                        key={item}
-                        className={`py-2 px-3 rounded cursor-pointer ${currentPage === item ? 'bg-gray-300 text-black' : 'bg-black text-white'}`}
-                        onClick={() => setCurrentPage(item)}
-                    >
-                        {item}
-                    </div>
-                ))
-    }
-
-    {
-        (filterProductData.length > 3 || (filterProductData.length === 0 && data.length > 3)) && (
-            <button className='font-primary font-bold px-4'
-                onClick={() => setCurrentPage(prev => Math.min(prev + 1, data.length))}
-                disabled={currentPage === data.length}
-            >
-                Next
-            </button>
-        )
-    }
-</div>
-
+                {
+                    (filterProductData.length > 3 || (filterProductData.length === 0 && data.length > 3)) && (
+                        <button className='font-primary font-bold px-4'
+                            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                            disabled={currentPage === 1}
+                        >
+                            Prev
+                        </button>
+                    )
+                }
+                {
+                    filterProductData.length > 3
+                        ? searchData.map((item) => (
+                            <div
+                                key={item}
+                                className={`py-2 px-3 rounded cursor-pointer ${currentPage === item ? 'bg-gray-300 text-black' : 'bg-black text-white'}`}
+                                onClick={() => setCurrentPage(item)}
+                            >
+                                {item}
+                            </div>
+                        ))
+                        : filterProductData.length > 0
+                            ? null
+                            : data.map((item) => (
+                                <div
+                                    key={item}
+                                    className={`py-2 px-3 rounded cursor-pointer ${currentPage === item ? 'bg-gray-300 text-black' : 'bg-black text-white'}`}
+                                    onClick={() => setCurrentPage(item)}
+                                >
+                                    {item}
+                                </div>
+                            ))
+                }
+                {
+                    (filterProductData.length > 3 || (filterProductData.length === 0 && data.length > 3)) && (
+                        <button className='font-primary font-bold px-4'
+                            onClick={() => setCurrentPage(prev => Math.min(prev + 1, data.length))}
+                            disabled={currentPage === data.length}
+                        >
+                            Next
+                        </button>
+                    )
+                }
+            </div>
         </div>
     )
 }

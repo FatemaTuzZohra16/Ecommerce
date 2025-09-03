@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <section>
         <Container>
-            <div className='mt-[40px] flex '>
+            <div className='mt-[40px] md:flex '>
                 <BannerLeft/>
                 <BannerRight/>
             </div>

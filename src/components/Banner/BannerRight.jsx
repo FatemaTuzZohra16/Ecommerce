@@ -12,7 +12,7 @@ const BannerRight = () => {
     slidesToScroll: 1,
   };
   return (
-    <div className='w-[80%] ml-[45px]'>
+    <div className='w-auto md:w-[80%] ml-0 md:ml-[45px] mt-8 md:mt-0'>
        <Slider {...settings}>
       <div>
          <img className='w-full' src={bannerImg} alt="" />

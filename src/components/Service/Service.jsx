@@ -25,10 +25,10 @@ const Service = () => {
   return (
     <div className='mb-[167px]'>
         <Container>
-            <div className='flex gap-x-[88px] justify-center'>
+            <div className='md:flex gap-x-[88px] justify-center'>
                 {
                     service.map((item)=>(
-                        <div className='text-center'>
+                        <div className='text-center pb-10 md:pb-0'>
                             <img className='mx-auto' src={item.image} alt="" />
                             <h3 className='font-primary font-semibold text-[20px] leading-[28px] py-6 px-2'>{item.name}</h3>
                             <p className='font-primary text-[14px] leading-[21px]'>{item.p}</p>
