@@ -22,14 +22,14 @@ const BestSellingProduct = () => {
                         </div>
                     </div>
                     <div>
-                        <div className='md:flex justify-between items-center'>
+                        <div className='sm:flex justify-between items-center'>
                             <h3 className='font-secondery font-semibold text-[36px] leading-[48px] mt-5 mb-12 md:mb-0'>Best Selling Products</h3>
                             <div>
                                 <a className='font-medium text-base font-primary leading-6 bg-primary text-white py-[16px] px-[48px] rounded' href="">View All</a>
                             </div>
                         </div>
                     </div>
-                    <div className='mt-[60px] pl-[20px] md:pl-0 md:flex justify-between'>
+                    <div className='mt-[60px] pl-[20px] md:pl-0 sm:flex flex-wrap justify-between'>
                         <div className='card'>
                             <div className='w-[270px] bg-[#F5F5F5] rounded py-[55px] px-[65px] relative'>
                             <img src={product1} alt="" />

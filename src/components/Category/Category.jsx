@@ -110,6 +110,29 @@ const Category = () => {
         slidesToShow: 6,
         slidesToScroll: 2,
         arrows: true,
+        responsive: [
+             {
+      breakpoint: 1024, // large tablet / small laptop
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 768, // tablet
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+              {
+      breakpoint: 480, // mobile
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+        ]
     };
     return (
         <div className='pt-[60px] md:pt-[153px] pb-[95px]'>
