@@ -61,7 +61,7 @@ const SingleProductDetail = () => {
                     <p className='text-black'>Havic HV G-92 Gamepad</p>
                 </div>
             </div>
-            <div className='flex pb-[140px]'>
+            <div className='lg:flex pb-[140px]'>
                 <div className="left w-[20%]">
                     {/* <div className='mb-4 bg-[#F5F5F5]  rounded'>
                             <img onClick={()=> setSelectedImg(gameController1)} src={gameController1} alt="" />

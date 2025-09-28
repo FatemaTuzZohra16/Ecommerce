@@ -69,8 +69,8 @@ const Contact = () => {
                     <p>/</p>
                     <p className='text-[14px] leading-[21px]'>Contact</p>
                 </div>
-                <div className='pb-[140px] flex justify-between'>
-                    <div className="left w-[30%] pt-[40px] px-[35px] pb-[51px] shadow">
+                <div className='pb-[140px] lg:flex justify-between'>
+                    <div className="left w-auto lg:w-[30%] pt-[40px] px-[35px] pb-[51px] shadow">
                         <div className='flex items-center gap-x-[16px]'>
                             <div className='w-[40px] h-[40px] rounded-full bg-primary flex justify-center items-center text-white'>
                                 <IoCallOutline />
@@ -91,7 +91,7 @@ const Contact = () => {
                         <p className='font-primary text-[14px] leading-[21px]'>Emails: support@exclusive.com</p>
                     </div>
                     <div className="right py-[40px] px-[32px] shadow">
-                        <div className='flex gap-[16px]'>
+                        <div className='md:flex gap-2 lg:gap-[16px]'>
                             <div className='flex flex-col'>
                                 <input type="text"
                                 value={name}
@@ -130,7 +130,7 @@ const Contact = () => {
                             />
                             <p className='text-red-600 mt-[20px] font-primary text-[12px]'>{massageErr}</p>
                         </div>
-                        <button onClick={handleSend} className='font-primary font-medium text-base leading-0-[24px] bg-primary text-white rounded py-4 px-6 ml-[570px]'>Send Massage</button>
+                        <button onClick={handleSend} className='font-primary font-medium text-base leading-0-[24px] bg-primary text-white rounded py-4 px-6 lg:ml-[570px]'>Send Massage</button>
                     </div>
                 </div>
             </Container>

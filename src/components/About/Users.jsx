@@ -27,9 +27,9 @@ const Users = () => {
             <Container>
                     <Slider {...settings}>
                     {
-                        user.map((item, index) => (
+                        user.slice(0, 6).map((item, index) => (
                             <div key={index} className='w-[370px]  px-[30px]'>
-                                <div className='w-full h-[400px] flex justify-center bg-white'>
+                                <div className='w-full h-[200px] md:h-[400px] flex justify-center bg-white'>
                                     <img src={item.avatar} alt="" 
                                     className='pt-[33px] w-full'
                                     />

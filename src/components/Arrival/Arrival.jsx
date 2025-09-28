@@ -21,8 +21,8 @@ const Arrival = () => {
                             <h3 className='font-secondery font-semibold text-[36px] leading-[48px] mt-5'>New Arrival</h3>
                         </div>
                     </div>
-                    <div className='md:flex justify-between mt-[60px]'>
-                        <div className="left mb-[30px] md:mb-0">
+                    <div className='lg:flex justify-between mt-[60px]'>
+                        <div className="left mb-[30px] lg:mb-0">
                             <img src={arrival1} alt="" />
                         </div>
                         <div className="right">

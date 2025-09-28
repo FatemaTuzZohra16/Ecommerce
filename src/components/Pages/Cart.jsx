@@ -148,7 +148,7 @@ console.log(discount);
                             <a href="">Update Cart</a>
                         </div>
                     </div>
-                    <div className='md:flex justify-between'>
+                    <div className='lg:flex justify-between'>
                         <div>
                             <div className='md:flex gap-x-4'>
                                 <div className='font-primary font-medium text-base leading-6 border border-black/30 rounded py-[16px] pl-[24px]'>
@@ -163,7 +163,7 @@ console.log(discount);
                                 <button onClick={handleApplyCoupon} className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white mt-[20px] md:mt-0'>Apply Coupon</button>
                             </div>
                         </div>
-                        <div className='w-auto md:w-[470px] border py-[32px] px-[24px] font-primary mt-[30px] md:mt-0'>
+                        <div className='w-auto md:w-[470px] border py-[32px] px-[24px] font-primary mt-[30px] lg:mt-0'>
                             <p className='font-primary font-medium text-[20px] leading-7'>Cart Total</p>
                             <div className='flex justify-between border-b border-black/30 pt-6 pb-4'>
                                 <p className='text-base leading-6'>Subtotal:</p>

@@ -55,7 +55,7 @@ const Shopping = () => {
     return (
         <div className='py-[140px]'>
             <Container>
-                <div className='flex justify-between'>
+                <div className='flex justify-center flex-wrap gap-6 mx-auto mb-5'>
                     {
                         shoppingData.map((item, index) => (
                             <div key={index} className='group hover:bg-primary w-[270px] py-[30px] px-[27px] text-center border border-black/30 rounded hover:border-0 hover:shadow-lg'>

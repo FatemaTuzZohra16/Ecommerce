@@ -88,7 +88,7 @@ const CheckOut = () => {
                     <p className='font-primary text-base leading-[21px]'>CheckOut</p>
                 </div>
                 <h2 className='font-secondery font-medium text-[30px] leading-[36px] pt-[80px] pb-[48px]'>Billing Details</h2>
-                <div className='md:flex justify-between'>
+                <div className='lg:flex justify-between'>
                     <div>
                         {
                             inputFields.map((field) => (
@@ -144,8 +144,8 @@ const CheckOut = () => {
                                 <div className='flex gap-x-4'>
                                     <div className='w-[24px] h-[24px] rounded-full border border-black flex flex-col justify-center items-center'>
                                         {paymentMethod === "bank" && (
-              <div className="w-[14px] h-[14px] bg-black rounded-full"></div>
-            )}
+                                         <div className="w-[14px] h-[14px] bg-black rounded-full"></div>
+                                        )}
                                     </div>
                                     <p className='text-base leading-6'>Bank</p>
                                 </div>
@@ -169,8 +169,8 @@ const CheckOut = () => {
                             >
                                 <div className='w-[24px] h-[24px] rounded-full border border-black flex flex-col justify-center items-center'>
                                      {paymentMethod === "coupon" && (
-            <div className="w-[14px] h-[14px] bg-black rounded-full"></div>
-          )}
+                                         <div className="w-[14px] h-[14px] bg-black rounded-full"></div>
+                                     )}
                                 </div>
                                 <p className='text-base leading-6'>Cash on delivery</p>
                             </div>

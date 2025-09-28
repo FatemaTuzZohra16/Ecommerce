@@ -13,7 +13,7 @@ const BannerRight = () => {
   };
   return (
     <div className='w-auto md:w-[80%] ml-0 md:ml-[45px] mt-8 md:mt-0'>
-       <Slider {...settings}>
+       <Slider {...settings}  className="home-slider">
       <div>
          <img className='w-full' src={bannerImg} alt="" />
       </div>

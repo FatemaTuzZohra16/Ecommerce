@@ -74,11 +74,11 @@ const LogIn = () => {
                     theme="dark"
                     transition={Bounce}
                 />
-                <div className='md:flex'>
+                <div className='lg:flex'>
                     <div>
                         <img src={signup} alt="" />
                     </div>
-                    <div className='py-[60px] md:py-[227px] ml-[6px] md:ml-[129px]'>
+                    <div className='py-[60px] md:py-[227px] ml-[6px] lg:ml-[129px]'>
                         <h2 className='font-secondery font-medium text-[36px] leading-[30px]'>Log in to Exclusive</h2>
                         <p className='font-primary text-base leading-[24px] pt-6 pb-[48px]'>Enter your details below</p>
                         <div className='font-primary text-base leading-[24px] text-[#7D8184] border-b border-[#7D8184] pt-10'>

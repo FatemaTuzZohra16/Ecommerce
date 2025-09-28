@@ -102,11 +102,11 @@ const SignUp = () => {
                     theme="dark"
                     transition={Bounce}
                 />
-                <div className='md:flex'>
+                <div className='lg:flex'>
                     <div>
                         <img src={signup} alt="" />
                     </div>
-                    <div className='ml-[11px] md:ml-[129px] mt-[60px] md:mt-[125px]'>
+                    <div className='ml-[11px] lg:ml-[129px] mt-[60px] md:mt-[125px]'>
                         <h2 className='font-secondery font-medium text-[36px] leading-[30px]'>Create an account</h2>
                         <p className='font-primary text-base leading-[24px] pt-6 pb-[48px]'>Enter your details below</p>
                         <div>
