@@ -1,0 +1,35 @@
+import React from 'react'
+import Container from '../Layout/Container.jsx'
+import Service from '../Service/Service.jsx'
+import slide from '../../assets/side-Image.png'
+import Shopping from './Shopping.jsx'
+import Users from './Users.jsx'
+
+const About = () => {
+  return (
+    <div>
+        <Container>
+            <div className='flex font-primary pt-[96px] pb-[42px] gap-x-3'>
+                <p className='text-[14px] leading-[21px] text-black/70'>Home</p>
+                <p>/</p>
+                <p className='text-[14px] leading-[21px]'>About</p>
+            </div>
+            <div className='flex gap-[75px] items-center'>
+                <div className='w-[525px]'>
+                    <h2 className='font-secondery font-semibold text-[54px] leading-[64px] tracking-[6%]'>Our Story</h2>
+                    <p className='w-[525px] font-primary text-base leading-[26px] mt-[40px] mb-[24px]'>Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. </p>
+                    <p className='font-primary text-base leading-[26px]'>Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.</p>
+                </div>
+                <div>
+                    <img src={slide} alt="" />
+                </div>
+            </div>
+        </Container>
+        <Shopping />
+        <Users />
+        <Service />
+    </div>
+  )
+}
+
+export default About

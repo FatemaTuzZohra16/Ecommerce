@@ -21,16 +21,16 @@ const Arrival = () => {
                             <h3 className='font-secondery font-semibold text-[36px] leading-[48px] mt-5'>New Arrival</h3>
                         </div>
                     </div>
-                    <div className='flex justify-between mt-[60px]'>
-                        <div className="left">
+                    <div className='md:flex justify-between mt-[60px]'>
+                        <div className="left mb-[30px] md:mb-0">
                             <img src={arrival1} alt="" />
                         </div>
                         <div className="right">
                             <div className='mb-[32px]'>
                                 <img src={arrival2} alt="" />
                             </div>
-                            <div className='flex gap-x-[30px]'>
-                                <img src={arrival3} alt="" />
+                            <div className='sm:flex gap-x-[30px]'>
+                                <img src={arrival3} alt=""  className='mb-[20px]'/>
                                 <img src={arrival4} alt="" />
                             </div>
                         </div>

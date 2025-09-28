@@ -17,15 +17,15 @@ const Navbar = () => {
   return (
     <Container>
       <nav className='pt-[43px] pb-[14px] border-b border-[#D9D9D9]'>
-        <div className='md:flex items-center justify-between'>
+        <div className='lg:flex items-center justify-between'>
           <div className='flex justify-between items-center'>
             <img src={logo} alt="" />
-            <div className='md:hidden'>
+            <div className='block lg:hidden'>
               <FaBars  onClick={handleClick} size={24}/>
             </div>
           </div>
           <div>
-            <ul className='hidden md:flex gap-x-[48px] font-primary text-base leading-6'>
+            <ul className='hidden lg:flex gap-x-[48px] font-primary text-base leading-6'>
               <li className='relative group'>
                 <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="/">Home</Link>
               </li>
@@ -33,17 +33,17 @@ const Navbar = () => {
                 <Link className='relative after:absolute after:content-[""] after:bottom-0 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px] after:left-1/2 after:-translate-x-1/2' to="/Product">Product</Link>
               </li>
               <li className='relative group'>
-                <Link className='relative after:absolute after:content-[""] after:bottom-0 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px] after:left-1/2 after:-translate-x-1/2' to="">Contact</Link>
+                <Link className='relative after:absolute after:content-[""] after:bottom-0 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px] after:left-1/2 after:-translate-x-1/2' to="/contact">Contact</Link>
               </li>
               <li className='relative group'>
-                <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="">About</Link>
+                <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="/about">About</Link>
               </li>
               <li className='relative group'>
                 <Link className='relative after:absolute after:content-[""] after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-[#808080] group-hover:after:w-[48px]' to="/signup">Sign Up</Link>
               </li>
             </ul>
           </div>
-          <div className='hidden md:flex gap-6 items-center'>
+          <div className='hidden lg:flex gap-6 items-center'>
             <div className='relative'>
               <input type="text" placeholder='What are you looking for?' className='w-[243px] py-[7px] bg-[#F5F5F5] rounded-[4px] pl-5 pr-[30px] font-primary text-[12px]'
               />

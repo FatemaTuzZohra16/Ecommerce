@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Container from '../Layout/Container'
 import { IoMdCheckbox } from "react-icons/io";
 import monitor from '../../assets/monitor.png'
@@ -57,6 +57,22 @@ const CheckOut = () => {
             type: "email"
         }
     ]
+    const [paymentMethod, setPaymentMethod] = useState("bank");
+    const [coupon, setCoupon] = useState("")
+    const [couponErr, setCouponErr] = useState("")
+
+    const handleCoupon = (e)=>{
+        setCoupon(e.target.value)
+        setCouponErr("")
+    }
+    const handleAplyCoupon = (e)=>{
+        if(coupon){
+            alert("You Got a Discount")
+            setCoupon("")
+        }else{
+            setCouponErr("Put your coupon first")
+        }
+    }
     return (
         <div className='pt-[80px] pb-[140px]'>
             <Container>
@@ -123,9 +139,14 @@ const CheckOut = () => {
                                 <p className='text-base leading-6'>Total:</p>
                                 <p className='text-base leading-6'>$1750</p>
                             </div>
-                            <div className='flex justify-between py-[32px]'>
+                            <div className='flex justify-between py-[32px] cursor-pointer'
+                                 onClick={() => setPaymentMethod("bank")}>
                                 <div className='flex gap-x-4'>
-                                    <div className='w-[24px] h-[24px] rounded-full border border-black'></div>
+                                    <div className='w-[24px] h-[24px] rounded-full border border-black flex flex-col justify-center items-center'>
+                                        {paymentMethod === "bank" && (
+              <div className="w-[14px] h-[14px] bg-black rounded-full"></div>
+            )}
+                                    </div>
                                     <p className='text-base leading-6'>Bank</p>
                                 </div>
                                 <div className='flex gap-x-2 items-center'>
@@ -143,25 +164,37 @@ const CheckOut = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex items-center gap-x-4'>
+                            <div className='flex items-center gap-x-4 cursor-pointer'
+                             onClick={() => setPaymentMethod("coupon")}
+                            >
                                 <div className='w-[24px] h-[24px] rounded-full border border-black flex flex-col justify-center items-center'>
-                                    <div className='w-[14px] h-[14px] bg-black rounded-full'></div>
+                                     {paymentMethod === "coupon" && (
+            <div className="w-[14px] h-[14px] bg-black rounded-full"></div>
+          )}
                                 </div>
                                 <p className='text-base leading-6'>Cash on delivery</p>
                             </div>
                         </div>
                         <div>
                             <div className='flex gap-x-4 py-[32px]'>
-                                <div className='font-primary text-base leading-6 border border-black/30 rounded py-[16px] pl-[24px] pr-[158px]'>
-                                    <a href="">Coupon Code</a>
+                                <div className='flex flex-col'>
+                                    <div className='font-primary text-base leading-6 border border-black/30 rounded py-[16px] pl-[24px] pr-[73px]'>
+                                    <input type="number" 
+                                    onChange={handleCoupon}
+                                    value={coupon}
+                                    placeholder='Coupon Code'
+                                    className='outline-0 w-[200px]'
+                                    />
                                 </div>
-                                <div className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white'>
-                                    <a href="">Apply Coupon</a>
+                                  <p className='font-primary text-red-700 mt-[20px]'>{couponErr}</p>
+                                </div>
+                                <div className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white h-[56px]'>
+                                    <button onClick={handleAplyCoupon}>Apply Coupon</button>
                                 </div>
                             </div>
                         </div>
                         <div className='font-primary font-medium text-base leading-6 rounded py-[16px] px-[48px] bg-primary text-white inline-block'>
-                            <a href="">Place Order</a>
+                            <a href="/contact">Place Order</a>
                         </div>
                     </div>
                 </div>

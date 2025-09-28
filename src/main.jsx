@@ -19,6 +19,11 @@ import SignUp from './components/Pages/SignUp.jsx';
 import LogIn from './components/Pages/LogIn.jsx';
 import firebaseConfig from './firebase/firebaseConfig.js';
 import Category from './components/Pages/Category.jsx';
+import About from './components/About/About.jsx';
+import Shopping from './components/About/Shopping.jsx';
+import Users from './components/About/Users.jsx';
+import Contact from './components/Contact/Contact.jsx';
+import Error from './components/Error/Error.jsx';
 
 
 const router = createBrowserRouter([
@@ -34,6 +39,11 @@ const router = createBrowserRouter([
       { path: "/signup", Component: SignUp },
       { path: "/logIn", Component: LogIn },
       { path: "/category/:name", Component: Category },
+      { path: "/about", Component: About },
+      { path: "/shopping", Component: Shopping },
+      { path: "/users", Component: Users },
+      { path: "/contact", Component: Contact },
+      { path: "/error", Component: Error },
     ]
   },
   // {
