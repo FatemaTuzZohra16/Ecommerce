@@ -34,7 +34,7 @@ const Users = () => {
                                     className='pt-[33px] w-full'
                                     />
                                 </div>
-                                <p className='font-secondery font-medium text-[32px] leading-[30px] tracking-[4%] pt-[32px] pb-2'>{item.name}</p>
+                                <p className='w-[370px] font-secondery font-medium text-[30px] leading-[30px] tracking-[4%] pt-[32px] pb-2 break-words'>{item.name}</p>
                                 <p className='font-primary text-base leading-[24px]'>{item.role}</p>
                                 <div className='flex gap-x-4 mt-4'>
                                     <CiTwitter  size={24}/>

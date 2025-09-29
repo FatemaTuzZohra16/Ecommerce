@@ -47,7 +47,7 @@ const ProductDetails = () => {
                     <p className='font-primary font-semibold text-[16px] leading-5 pl-[16px] text-primary'>Related Item</p>
                 </div>
             </div>
-            <div className='flex justify-between'>
+            <div className='sm:flex justify-between flex-wrap'>
                 {
                 productDetails.map((productDetails)=>(
                     <div className='card mb-[140px]'>

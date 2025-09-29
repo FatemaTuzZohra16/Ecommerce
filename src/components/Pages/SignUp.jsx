@@ -102,7 +102,7 @@ const SignUp = () => {
                     theme="dark"
                     transition={Bounce}
                 />
-                <div className='lg:flex'>
+                <div className='lg:flex items-center'>
                     <div>
                         <img src={signup} alt="" />
                     </div>

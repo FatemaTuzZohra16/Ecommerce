@@ -10,6 +10,7 @@ const BannerRight = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
   return (
     <div className='w-auto md:w-[80%] ml-0 md:ml-[45px] mt-8 md:mt-0'>

@@ -90,7 +90,7 @@ const Contact = () => {
                         <p className='font-primary text-[14px] leading-[21px] mb-[16px]'>Emails: customer@exclusive.com</p>
                         <p className='font-primary text-[14px] leading-[21px]'>Emails: support@exclusive.com</p>
                     </div>
-                    <div className="right py-[40px] px-[32px] shadow">
+                    <div className="right py-[40px] lgx:px-[27px] lst:px-[32px] shadow">
                         <div className='md:flex gap-2 lg:gap-[16px]'>
                             <div className='flex flex-col'>
                                 <input type="text"

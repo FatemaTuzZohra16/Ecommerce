@@ -9,6 +9,8 @@
   --color-primary: #DB4444;
   --color-secondery: #808080;
   --color-green: #00FF66;
+   --breakpoint-lgx: 1024px; 
+   --breakpoint-lst: 1161px; 
 }
 
 
@@ -30,6 +32,14 @@
   .home-slider ul.slick-dots {
     top: 192px !important; /* adjust kore niche neme asbe */
   }
+}
+@media (max-width: 1160px) {
+  .home-slider .slick-dots {
+    bottom: 35px !important; /* mobile adjust */
+  }
+  .home-slider ul.slick-dots {
+    top: 280px !important;
+}
 }
 .home-slider ul.slick-dots {
     top: 325px;
@@ -74,8 +84,18 @@
 .slick-next {
     right: 25px !important;
 }
+@media (max-width: 1024px){
+  .slick-next {
+    right: 57px !important;
+}
+}
 .slick-prev {
     left: 1045px !important;
+}
+@media (max-width: 1024px){
+ .slick-prev {
+    left: 975px !important;
+}
 }
 .slick-prev:before, .slick-next:before {
     font-size: 28px;

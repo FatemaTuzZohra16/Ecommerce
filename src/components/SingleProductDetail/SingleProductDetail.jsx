@@ -83,10 +83,10 @@ const SingleProductDetail = () => {
                         ))
                     }
                 </div>
-                <div className="right w-[60%] bg-[#F5F5F5]  mr-[70px] ml-[30px] overflow-hidden">
+                <div className="right w-[60%] bg-[#F5F5F5] mr-[70px] ml-[100px] sm:ml-[160px] md:ml-[180px] lg:ml-[30px] mt-[-89px] sm:mt-[-137px] md:mt-[-160px] lg:mt-0 overflow-hidden">
                     <img className='h-[600px] object-contain' src={selectedImg} alt="" />
                 </div>
-                <div className='w-[40%]'>
+                <div className='w-auto lg:w-[40%] mt-6 lg:mt-0 '>
                     <p className='font-secondery font-semibold text-[24px] leading-6'>
                         {singleProduct?.title}
                     </p>
@@ -119,7 +119,7 @@ const SingleProductDetail = () => {
                         </div>
                     </div>
 
-                    <div className='w-[399px] h-[180px] border border-black/50 rounded py-6'>
+                    <div className='w-auto md:w-[399px] h-[180px] border border-black/50 rounded py-6'>
                         <div className='flex items-center gap-x-4 pl-4'>
                             <div className="left text-black">
                                 <TbTruckDelivery className='w-10 h-10' />
