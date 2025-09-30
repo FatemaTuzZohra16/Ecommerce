@@ -24,7 +24,7 @@ import Shopping from './components/About/Shopping.jsx';
 import Users from './components/About/Users.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import Error from './components/Error/Error.jsx';
-
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,7 +43,8 @@ const router = createBrowserRouter([
       { path: "/shopping", Component: Shopping },
       { path: "/users", Component: Users },
       { path: "/contact", Component: Contact },
-      { path: "/error", Component: Error },
+      // { path: "/error", Component: Error },
+      { path: "*", Component: Error },
     ]
   },
   // {
@@ -54,7 +55,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-      <RouterProvider router={router} />
+     <ErrorBoundary>
+       <RouterProvider router={router} />
     {/* <App /> */}
+     </ErrorBoundary>
   </Provider>,
 )

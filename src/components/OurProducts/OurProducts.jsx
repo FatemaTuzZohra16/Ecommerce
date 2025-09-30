@@ -119,7 +119,7 @@ const OurProducts = () => {
                         {
                             product.slice(0, visible).map((product) => (
                                 <div className='card my-[60px]'>
-                                    <div className='w-[270px] h-[322px] bg-[#F5F5F5] rounded py-[55px] px-[65px] lgx:px-[40px] relative group'>
+                                    <div className='w-[270px] h-[322px] bg-[#F5F5F5] rounded py-[55px] px-[65px]  relative group'>
                                         <img src={product.image} alt="" />
                                         <div className='hidden group-hover:block'>
                                             <a className='absolute font-primary font-medium text-base leading-6 py-2 rounded bg-black text-white bottom-0 left-0 w-full text-center' href="">Add To Cart</a>

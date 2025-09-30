@@ -10,6 +10,7 @@ import { current } from '@reduxjs/toolkit';
 import { cartQuntity } from '../../slices/cartSlice';
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { MdDelete } from "react-icons/md";
+import { deleteItem } from '../../slices/cartSlice';
 
 const Cart = () => {
     const data = useSelector(state => state.cartDetails.cartItems)
@@ -34,11 +35,11 @@ const Cart = () => {
     }
 console.log(discount);
 
-    const totalPrice = data.reduce((prev, current) => {
-        // console.log(prev, "prev");
-        // console.log(current, "current");
+     const totalPrice = data.reduce((prev, current) => {
         return prev + (current.price * current.cartQun)
-    }, 0)
+    }, 0);
+
+    const total = totalPrice - discount;
     const handleIncrement = (id) => {
         dispatch(cartQuntity({ id: id, type: "increment" }))
         // console.log(id, "Aney");  
@@ -47,11 +48,11 @@ console.log(discount);
         const item = data.find(item => item.id === id);
             dispatch(cartQuntity({ id: id, type: "decrement" }))
     }
-    const total = totalPrice-discount
-    const handleDelete = ()=>{
-        console.log("osisi");
-        
-    }
+   const handleDelete = (id) => {
+    dispatch(deleteItem(id));
+    toast.success("Product removed from cart");
+}
+
     return (
         <div>
             <Container>
@@ -134,7 +135,7 @@ console.log(discount);
                                     <p className='text-base leading-6'>${(product.price * product.cartQun).toFixed(2)}</p>
                                 </div>
                                 <div className='w-[40px] h-[40px] rounded-full flex justify-center items-center bg-primary text-white'>
-                                    <MdDelete  size={24} onClick={handleDelete}/>
+                                    <MdDelete size={24} onClick={() => handleDelete(product.id)} />
                                 </div>
                             </div>
                         ))
