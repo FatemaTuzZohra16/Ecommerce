@@ -25,7 +25,7 @@ const Users = () => {
     return (
         <div className='mb-[196px]'>
             <Container>
-                    <Slider {...settings}>
+                    <Slider {...settings}  className="users-slider">
                     {
                         user.slice(0, 6).map((item, index) => (
                             <div key={index} className='w-[370px]  px-[30px]'>
